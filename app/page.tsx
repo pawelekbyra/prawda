@@ -55,9 +55,6 @@ export default function Page() {
               Autoryzuj dostęp
             </button>
           </form>
-          <div className="text-center text-xs text-slate-500">
-            System Archiwizacji Dokumentacji Sądowej
-          </div>
         </div>
       </div>
     );
@@ -68,8 +65,9 @@ export default function Page() {
       {/* Header */}
       <header className="bg-slate-900 text-white py-12 px-4 shadow-lg border-b-4 border-red-700">
         <div className="max-w-4xl mx-auto text-center space-y-4">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-tight uppercase">
-            Dowód w sprawie: Sygn. akt II K 764/25
+          <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-tight uppercase flex flex-col gap-2">
+            <span>Dowód w sprawie:</span>
+            <span>Sygn. akt II K 764/25</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl font-medium tracking-wide">
             Sąd Rejonowy w Środzie Śląskiej, II Wydział Karny
@@ -170,7 +168,7 @@ export default function Page() {
 
       <footer className="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
         <div className="text-center text-slate-500 text-sm">
-          <p>&copy; 2024 Archiwum Sprawy II K 764/25. Wszelkie prawa do materiałów zastrzeżone.</p>
+          <p>&copy; 2024 Archiwum Sprawy II K 764/25.</p>
           <p className="mt-2 text-[10px] uppercase tracking-widest">Prawda nie wymaga interpretacji. Prawda jest faktem.</p>
         </div>
       </footer>
