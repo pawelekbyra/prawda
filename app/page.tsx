@@ -32,7 +32,7 @@ export default function Page() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans text-slate-900">
         <div className="w-full max-w-[200px] space-y-4">
-          <h1 className="text-sm font-medium">Hasło:</h1>
+          <h1 className="text-sm font-medium text-center">Hasło:</h1>
           <form className="space-y-4" onSubmit={handleLogin}>
             <input
               id="password"
