@@ -20,34 +20,39 @@ export default function Page() {
         setIsAuthenticated(true);
       } else {
         const data = await response.json();
-        setError(data.message || "ERROR");
+        setError(data.message || "Błąd");
         setPassword("");
       }
     } catch (err) {
-      setError("SYSTEM_FAILURE");
+      setError("Błąd systemowy");
     }
   };
 
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-black font-mono text-green-500 p-4">
-        <div className="w-full max-w-2xl">
-          <form className="flex flex-wrap items-center" onSubmit={handleLogin}>
-            <span className="mr-2">&gt; podaj hasło i naciśnij enter:</span>
+      <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans text-slate-900">
+        <div className="w-full max-w-[200px] space-y-4">
+          <h1 className="text-sm font-medium">Hasło:</h1>
+          <form className="space-y-4" onSubmit={handleLogin}>
             <input
               id="password"
               name="password"
               type="text"
               autoFocus
               required
-              className="flex-1 bg-black border-none p-0 text-green-500 focus:ring-0 focus:outline-none min-w-[200px]"
+              className="block w-full border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:border-slate-400"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="off"
             />
-            <button type="submit" className="hidden">Enter</button>
+            <button
+              type="submit"
+              className="w-full bg-slate-900 text-white py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-800 transition-colors"
+            >
+              Enter
+            </button>
+            {error && <p className="text-[10px] text-red-500 uppercase text-center">{error}</p>}
           </form>
-          {error && <p className="mt-4 text-xs text-red-600 opacity-70 tracking-widest">{error}</p>}
         </div>
       </div>
     );
