@@ -1,18 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Page() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    const authStatus = localStorage.getItem("site_auth");
-    if (authStatus === "true") {
-      setIsAuthenticated(true);
-    }
-  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,47 +18,36 @@ export default function Page() {
 
       if (response.ok) {
         setIsAuthenticated(true);
-        localStorage.setItem("site_auth", "true");
       } else {
         const data = await response.json();
-        setError(data.message || "Nieprawidłowe hasło");
+        setError(data.message || "ERROR");
         setPassword("");
       }
     } catch (err) {
-      setError("Wystąpił błąd podczas logowania");
+      setError("SYSTEM_FAILURE");
     }
   };
 
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-950 p-4">
-        <div className="w-full max-w-md space-y-8 rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white">Dostęp Zabezpieczony</h2>
-            <p className="mt-2 text-slate-400">Podaj hasło, aby uzyskać dostęp do materiałów dowodowych.</p>
-          </div>
-          <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-            <div className="space-y-2">
-              <label htmlFor="password" className="sr-only">Hasło</label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                className="relative block w-full rounded-lg border-0 bg-slate-800 py-3 text-white ring-1 ring-inset ring-slate-700 placeholder:text-slate-500 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
-                placeholder="Wprowadź hasło"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            {error && <p className="text-center text-sm text-red-500">{error}</p>}
-            <button
-              type="submit"
-              className="group relative flex w-full justify-center rounded-lg bg-red-700 px-3 py-3 text-sm font-semibold text-white hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-colors"
-            >
-              Autoryzuj dostęp
-            </button>
+      <div className="flex min-h-screen items-center justify-center bg-black font-mono text-green-500 p-4">
+        <div className="w-full max-w-md">
+          <form className="flex items-center space-x-2" onSubmit={handleLogin}>
+            <span className="shrink-0">&gt; podaj hasło:</span>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autoFocus
+              required
+              className="block w-full bg-black border-none p-0 text-green-500 focus:ring-0 focus:outline-none"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="off"
+            />
+            <button type="submit" className="hidden">Enter</button>
           </form>
+          {error && <p className="mt-4 text-xs text-red-600 opacity-70 tracking-widest">{error}</p>}
         </div>
       </div>
     );
@@ -161,7 +143,7 @@ export default function Page() {
           >
             <div className="flex items-center space-x-4">
               <div className="bg-slate-100 p-3 rounded-lg group-hover:bg-slate-200 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
