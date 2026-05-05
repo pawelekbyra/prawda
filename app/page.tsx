@@ -14,14 +14,25 @@ export default function Page() {
     }
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "kochamprawde") {
-      setIsAuthenticated(true);
-      localStorage.setItem("site_auth", "true");
-    } else {
-      setError("Nieprawidłowe hasło");
-      setPassword("");
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      if (response.ok) {
+        setIsAuthenticated(true);
+        localStorage.setItem("site_auth", "true");
+      } else {
+        const data = await response.json();
+        setError(data.message || "Nieprawidłowe hasło");
+        setPassword("");
+      }
+    } catch (err) {
+      setError("Wystąpił błąd podczas logowania");
     }
   };
 
@@ -113,8 +124,8 @@ export default function Page() {
               </div>
 
               <div className="bg-slate-800 rounded-xl p-4">
-                <audio controls className="w-full h-12 filter invert brightness-100 contrast-125">
-                  <source src="/evidence/stefan-nagranie.mp3" type="audio/mpeg" />
+                <audio controls preload="none" className="w-full h-12 filter invert brightness-100 contrast-125">
+                  <source src="/api/download" type="audio/mpeg" />
                   Twoja przeglądarka nie obsługuje odtwarzacza audio.
                 </audio>
               </div>
