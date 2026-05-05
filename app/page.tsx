@@ -31,16 +31,16 @@ export default function Page() {
   if (!isAuthenticated) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-black font-mono text-green-500 p-4">
-        <div className="w-full max-w-md">
-          <form className="flex items-center space-x-2" onSubmit={handleLogin}>
-            <span className="shrink-0">&gt; podaj hasło:</span>
+        <div className="w-full max-w-2xl">
+          <form className="flex flex-wrap items-center" onSubmit={handleLogin}>
+            <span className="mr-2">&gt; podaj hasło i naciśnij enter:</span>
             <input
               id="password"
               name="password"
-              type="password"
+              type="text"
               autoFocus
               required
-              className="block w-full bg-black border-none p-0 text-green-500 focus:ring-0 focus:outline-none"
+              className="flex-1 bg-black border-none p-0 text-green-500 focus:ring-0 focus:outline-none min-w-[200px]"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="off"
