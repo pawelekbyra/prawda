@@ -104,17 +104,42 @@ export default function Page() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold">Plik audio: stefan-nagranie.mp3</h3>
+                    <h3 className="text-white font-semibold">Plik audio: rozprawa-15-04-2026-sroda-slaska-lizynska.mp3</h3>
                     <p className="text-slate-400 text-sm">Rozprawa główna - 15.04.2026</p>
                   </div>
                 </div>
+                <a
+                  href="/api/download"
+                  download
+                  className="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors shrink-0"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Pobierz
+                </a>
               </div>
 
-              <div className="bg-slate-800 rounded-xl p-4">
-                <audio controls preload="none" className="w-full h-12 filter invert brightness-100 contrast-125">
+              <div className="bg-slate-800 rounded-xl p-4 custom-audio-container">
+                <audio controls controlsList="nodownload noplaybackrate" preload="none" className="w-full h-12 filter invert brightness-100 contrast-125">
                   <source src="/api/download" type="audio/mpeg" />
                   Twoja przeglądarka nie obsługuje odtwarzacza audio.
                 </audio>
+                <style jsx global>{`
+                  .custom-audio-container audio::-webkit-media-controls-enclosure {
+                    background-color: transparent !important;
+                  }
+                  .custom-audio-container audio::-webkit-media-controls-panel {
+                    padding-right: 20px !important;
+                  }
+                  /* Hide the three dots button in some browsers */
+                  .custom-audio-container audio::-webkit-media-controls-overflow-button {
+                    display: none !important;
+                  }
+                  .custom-audio-container audio::-internal-media-controls-overflow-button {
+                    display: none !important;
+                  }
+                `}</style>
               </div>
             </div>
           </div>
@@ -123,7 +148,9 @@ export default function Page() {
         {/* Documents Section */}
         <section className="grid md:grid-cols-2 gap-6">
           <a
-            href="#"
+            href="/evidence/sfalszowany-protokol-sroda-slaska-15-04.2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-red-600 transition-all hover:shadow-md"
           >
             <div className="flex items-center space-x-4">
