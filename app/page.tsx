@@ -111,7 +111,7 @@ export default function Page() {
                 <a
                   href="/api/download"
                   download
-                  className="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors shrink-0"
+                  className="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors shrink-0 mt-1"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -170,7 +170,9 @@ export default function Page() {
           </a>
 
           <a
-            href="#"
+            href="/evidence/protokol-prawdziwy-na-podstawie-transkrybcji.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-slate-800 transition-all hover:shadow-md"
           >
             <div className="flex items-center space-x-4">
