@@ -77,7 +77,7 @@ export default function Page() {
         {/* Informational Section */}
         <section className="bg-white border-l-4 border-red-700 p-8 shadow-sm rounded-r-lg">
           <p className="text-lg leading-relaxed text-slate-700 italic">
-            &quot;Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej.&quot;
+            Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
           </p>
         </section>
 
