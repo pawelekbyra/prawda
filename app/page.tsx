@@ -30,9 +30,9 @@ export default function Page() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50 p-4 font-sans text-slate-900">
+      <div className="flex min-h-screen items-center justify-center bg-[#f8f9fa] p-4 font-sans text-slate-900 selection:bg-red-100 selection:text-red-900">
         <div className="w-full max-w-[420px] space-y-8">
-          <div className="bg-white p-12 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200/50">
+          <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-200 border-t-4 border-red-700">
             <form className="space-y-10" onSubmit={handleLogin}>
               <div className="space-y-6">
                 <h1 className="text-[10px] font-bold text-center uppercase tracking-[0.5em] text-slate-400">Hasło</h1>
@@ -42,7 +42,7 @@ export default function Page() {
                   type="text"
                   autoFocus
                   required
-                  className="block w-full bg-slate-50 border border-slate-100 px-4 py-4 text-sm text-center focus:outline-none focus:bg-white focus:border-slate-300 transition-all rounded-2xl text-slate-900"
+                  className="block w-full bg-[#f8f9fa] border border-slate-200 px-4 py-4 text-sm text-center focus:outline-none focus:bg-white focus:border-slate-300 transition-all rounded-2xl text-slate-900"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="off"
@@ -50,7 +50,7 @@ export default function Page() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-slate-900 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-black transition-all rounded-2xl"
+                className="w-full bg-red-700 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-red-600 transition-all rounded-2xl"
               >
                 Enter
               </button>
@@ -71,7 +71,7 @@ export default function Page() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-red-100 selection:text-red-900">
+    <div className="min-h-screen bg-[#f8f9fa] text-slate-900 font-sans selection:bg-red-100 selection:text-red-900">
       {/* Header */}
       <header className="bg-slate-900 text-white py-12 px-4 shadow-lg border-b-4 border-red-700">
         <div className="max-w-4xl mx-auto text-center space-y-4">
