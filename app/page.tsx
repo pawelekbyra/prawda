@@ -30,25 +30,19 @@ export default function Page() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-950 p-4 font-sans text-slate-300">
-        <div className="w-full max-w-[440px] space-y-8 animate-in fade-in duration-1000">
-          <div className="bg-slate-900/50 border border-slate-800/50 p-10 backdrop-blur-xl rounded-3xl shadow-2xl space-y-8">
-            <div className="space-y-2 text-center">
-              <h1 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">System Evidence Access</h1>
-              <div className="h-[1px] w-12 bg-red-900/50 mx-auto"></div>
-            </div>
-
-            <form className="space-y-6" onSubmit={handleLogin}>
-              <div className="space-y-3">
-                <label htmlFor="password" className="text-[10px] uppercase font-semibold tracking-widest text-slate-400 block ml-1">Klucz dostępu:</label>
+      <div className="flex min-h-screen items-center justify-center bg-slate-50 p-4 font-sans text-slate-900">
+        <div className="w-full max-w-[420px] space-y-8">
+          <div className="bg-white p-12 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200/50">
+            <form className="space-y-10" onSubmit={handleLogin}>
+              <div className="space-y-6">
+                <h1 className="text-[10px] font-bold text-center uppercase tracking-[0.5em] text-slate-400">Hasło</h1>
                 <input
                   id="password"
                   name="password"
                   type="text"
                   autoFocus
                   required
-                  className="block w-full bg-slate-950/50 border border-slate-800 px-4 py-3 text-sm focus:outline-none focus:border-red-900/50 focus:ring-1 focus:ring-red-900/20 transition-all rounded-xl text-slate-200 placeholder:text-slate-700"
-                  placeholder="••••••••"
+                  className="block w-full bg-slate-50 border border-slate-100 px-4 py-4 text-sm text-center focus:outline-none focus:bg-white focus:border-slate-300 transition-all rounded-2xl text-slate-900"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="off"
@@ -56,21 +50,18 @@ export default function Page() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-slate-200 text-slate-950 py-3 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:scale-[1.01] active:scale-[0.99] transition-all rounded-xl shadow-lg shadow-black/20"
+                className="w-full bg-slate-900 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-black transition-all rounded-2xl"
               >
-                Autoryzuj
+                Enter
               </button>
               {error && (
-                <div className="flex items-center justify-center space-x-2 animate-bounce">
-                  <div className="h-1 w-1 bg-red-600 rounded-full"></div>
-                  <p className="text-[10px] text-red-500 font-bold uppercase tracking-wider">{error}</p>
-                </div>
+                <p className="text-[10px] text-red-500 font-bold uppercase text-center tracking-widest">{error}</p>
               )}
             </form>
           </div>
 
-          <div className="px-6">
-            <p className="text-[10px] leading-relaxed text-slate-500 text-center font-medium opacity-80 hover:opacity-100 transition-opacity duration-500">
+          <div className="px-8">
+            <p className="text-[10px] leading-relaxed text-slate-400 text-center font-medium">
               Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
             </p>
           </div>
