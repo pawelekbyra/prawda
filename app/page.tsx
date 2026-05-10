@@ -31,28 +31,33 @@ export default function Page() {
   if (!isAuthenticated) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans text-slate-900">
-        <div className="w-full max-w-[200px] space-y-4">
-          <h1 className="text-sm font-medium text-center">Hasło:</h1>
-          <form className="space-y-4" onSubmit={handleLogin}>
-            <input
-              id="password"
-              name="password"
-              type="text"
-              autoFocus
-              required
-              className="block w-full border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:border-slate-400"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete="off"
-            />
-            <button
-              type="submit"
-              className="w-full bg-slate-900 text-white py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-800 transition-colors"
-            >
-              Enter
-            </button>
-            {error && <p className="text-[10px] text-red-500 uppercase text-center">{error}</p>}
-          </form>
+        <div className="w-full max-w-2xl space-y-8">
+          <p className="text-sm leading-relaxed text-slate-600 text-center italic">
+            Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
+          </p>
+          <div className="max-w-[200px] mx-auto space-y-4">
+            <h1 className="text-sm font-medium text-center uppercase tracking-wider">Hasło:</h1>
+            <form className="space-y-4" onSubmit={handleLogin}>
+              <input
+                id="password"
+                name="password"
+                type="text"
+                autoFocus
+                required
+                className="block w-full border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:border-slate-400"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="off"
+              />
+              <button
+                type="submit"
+                className="w-full bg-slate-900 text-white py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-800 transition-colors"
+              >
+                Enter
+              </button>
+              {error && <p className="text-[10px] text-red-500 uppercase text-center">{error}</p>}
+            </form>
+          </div>
         </div>
       </div>
     );
