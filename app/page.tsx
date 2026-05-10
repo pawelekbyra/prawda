@@ -111,7 +111,7 @@ export default function Page() {
                 <a
                   href="/api/download"
                   download
-                  className="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors shrink-0 mt-1"
+                  className="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors shrink-0 mt-3"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -196,7 +196,6 @@ export default function Page() {
       <footer className="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
         <div className="text-center text-slate-500 text-sm">
           <p>&copy; 2024 Archiwum Sprawy II K 764/25.</p>
-          <p className="mt-2 text-[10px] uppercase tracking-widest">Prawda nie wymaga interpretacji. Prawda jest faktem.</p>
         </div>
       </footer>
     </div>
