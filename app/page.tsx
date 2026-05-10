@@ -148,7 +148,7 @@ export default function Page() {
         {/* Documents Section */}
         <section className="grid md:grid-cols-2 gap-6">
           <a
-            href="/evidence/sfalszowany-protokol-sroda-slaska-15-04.2026.pdf"
+            href="/api/track?type=protokol_sfalszowany"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-red-600 transition-all hover:shadow-md"
@@ -170,7 +170,7 @@ export default function Page() {
           </a>
 
           <a
-            href="/evidence/protokol-prawdziwy-na-podstawie-transkrybcji.pdf"
+            href="/api/track?type=protokol_prawdziwy"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-slate-800 transition-all hover:shadow-md"
