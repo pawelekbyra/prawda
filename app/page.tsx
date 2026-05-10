@@ -31,10 +31,10 @@ export default function Page() {
   if (!isAuthenticated) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans text-black">
-        <div className="w-full max-w-[400px] border-2 border-black p-6 space-y-4">
+        <div className="w-full max-w-[400px] space-y-8">
           <form className="space-y-4" onSubmit={handleLogin}>
             <div className="space-y-2">
-              <label htmlFor="password" className="text-[11px] uppercase font-bold tracking-widest block text-black">
+              <label htmlFor="password" className="text-[11px] uppercase font-bold tracking-widest block text-black text-center">
                 Hasło:
               </label>
               <input
@@ -51,7 +51,7 @@ export default function Page() {
             </div>
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 text-xs font-bold uppercase tracking-widest hover:bg-zinc-900 transition-colors border-2 border-black"
+              className="w-full bg-black text-white py-2 text-xs font-bold uppercase tracking-widest hover:bg-zinc-900 transition-colors"
             >
               Enter
             </button>
@@ -59,7 +59,7 @@ export default function Page() {
           </form>
 
           <div className="pt-2">
-            <p className="text-[10px] leading-relaxed text-black italic font-medium">
+            <p className="text-[10px] leading-relaxed text-black font-medium text-center">
               Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
             </p>
           </div>
