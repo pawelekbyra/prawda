@@ -30,34 +30,39 @@ export default function Page() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans text-slate-900">
-        <div className="w-full max-w-2xl space-y-12">
-          <div className="max-w-[200px] mx-auto space-y-4">
-            <h1 className="text-sm font-medium text-center uppercase tracking-wider">Hasło:</h1>
-            <form className="space-y-4" onSubmit={handleLogin}>
+      <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans text-black">
+        <div className="w-full max-w-[400px] border-2 border-black p-6 space-y-4">
+          <form className="space-y-4" onSubmit={handleLogin}>
+            <div className="space-y-2">
+              <label htmlFor="password" className="text-[11px] uppercase font-bold tracking-widest block text-black">
+                Hasło:
+              </label>
               <input
                 id="password"
                 name="password"
                 type="text"
                 autoFocus
                 required
-                className="block w-full border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:border-slate-400"
+                className="block w-full border-2 border-black bg-white px-3 py-2 text-sm focus:outline-none text-black font-bold"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 autoComplete="off"
               />
-              <button
-                type="submit"
-                className="w-full bg-slate-900 text-white py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-800 transition-colors"
-              >
-                Enter
-              </button>
-              {error && <p className="text-[10px] text-red-500 uppercase text-center">{error}</p>}
-            </form>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-black text-white py-2 text-xs font-bold uppercase tracking-widest hover:bg-zinc-900 transition-colors border-2 border-black"
+            >
+              Enter
+            </button>
+            {error && <p className="text-[10px] text-red-600 font-bold uppercase text-center">{error}</p>}
+          </form>
+
+          <div className="pt-2">
+            <p className="text-[10px] leading-relaxed text-black italic font-medium">
+              Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
+            </p>
           </div>
-          <p className="text-sm leading-relaxed text-slate-500 text-center italic border-t border-slate-100 pt-8">
-            Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
-          </p>
         </div>
       </div>
     );
