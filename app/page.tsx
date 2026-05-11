@@ -35,7 +35,7 @@ export default function Page() {
           <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-200 border-t-4 border-t-slate-900 border-b-4 border-b-slate-900">
             <form className="space-y-10" onSubmit={handleLogin}>
               <div className="space-y-6">
-                <h1 className="text-[10px] font-bold text-center uppercase tracking-[0.5em] text-slate-900">Hasło</h1>
+                <h1 className="text-[13px] font-bold text-center uppercase tracking-[0.5em] text-slate-900">Hasło:</h1>
                 <input
                   id="password"
                   name="password"
@@ -207,7 +207,7 @@ export default function Page() {
 
       <footer className="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
         <div className="text-center text-slate-500 text-sm">
-          <p>&copy; 2024 Archiwum Sprawy II K 764/25.</p>
+          <p>&copy; 2026 Archiwum Sprawy II K 764/25.</p>
         </div>
       </footer>
     </div>
