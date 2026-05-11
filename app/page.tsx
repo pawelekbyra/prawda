@@ -32,7 +32,7 @@ export default function Page() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#f8f9fa] p-4 font-sans text-slate-900 selection:bg-red-100 selection:text-red-900">
         <div className="w-full max-w-[420px] space-y-8">
-          <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-200 border-t-4 border-t-red-700 border-b-4 border-b-red-700">
+          <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-200 border-t-4 border-t-slate-900 border-b-4 border-b-slate-900">
             <form className="space-y-10" onSubmit={handleLogin}>
               <div className="space-y-6">
                 <h1 className="text-[10px] font-bold text-center uppercase tracking-[0.5em] text-slate-900">Hasło</h1>
