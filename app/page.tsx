@@ -32,7 +32,7 @@ export default function Page() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#f8f9fa] p-4 font-sans text-slate-900 selection:bg-red-100 selection:text-red-900">
         <div className="w-full max-w-[420px] space-y-8">
-          <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-200 border-t-4 border-red-700">
+          <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-200 border-t-4 border-t-red-700">
             <form className="space-y-10" onSubmit={handleLogin}>
               <div className="space-y-6">
                 <h1 className="text-[10px] font-bold text-center uppercase tracking-[0.5em] text-slate-400">Hasło</h1>
@@ -50,7 +50,7 @@ export default function Page() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-red-700 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-red-600 transition-all rounded-2xl"
+                className="w-full bg-slate-900 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-black transition-all rounded-2xl"
               >
                 Enter
               </button>
