@@ -28,62 +28,79 @@ export default function Page() {
     }
   };
 
+  const Header = () => (
+    <header className="bg-black text-white py-12 px-4 shadow-lg border-b-4 border-red-700">
+      <div className="max-w-4xl mx-auto text-center space-y-4">
+        <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-tight uppercase flex flex-col gap-2">
+          <span>Dowód w sprawie:</span>
+          <span>Sygn. akt II K 764/25</span>
+        </h1>
+        <p className="text-slate-400 text-lg md:text-xl font-medium tracking-wide">
+          Sąd Rejonowy w Środzie Śląskiej, II Wydział Karny
+        </p>
+      </div>
+    </header>
+  );
+
+  const Footer = () => (
+    <footer className="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
+      <div className="text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Archiwum Sprawy II K 764/25.</p>
+      </div>
+    </footer>
+  );
+
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f8f9fa] p-4 font-sans text-slate-900 selection:bg-red-100 selection:text-red-900">
-        <div className="w-full max-w-[420px] space-y-8">
-          <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-slate-900 border-t-4 border-b-4">
-            <form className="space-y-10" onSubmit={handleLogin}>
-              <div className="space-y-6">
-                <h1 className="text-[13px] font-bold text-center uppercase tracking-[0.5em] text-slate-900">Hasło:</h1>
-                <input
-                  id="password"
-                  name="password"
-                  type="text"
-                  autoFocus
-                  required
-                  className="block w-full bg-[#f8f9fa] border border-slate-200 px-4 py-4 text-sm text-center focus:outline-none focus:bg-white focus:border-slate-300 transition-all rounded-2xl text-slate-900"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="off"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-slate-900 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-black transition-all rounded-2xl"
-              >
-                Enter
-              </button>
-              {error && (
-                <p className="text-[10px] text-red-500 font-bold uppercase text-center tracking-widest">{error}</p>
-              )}
-            </form>
-          </div>
+      <div className="min-h-screen bg-[#f8f9fa] text-black font-sans selection:bg-red-100 selection:text-red-900 flex flex-col">
+        <Header />
 
-          <div className="px-8">
-            <p className="text-[10px] leading-relaxed text-slate-400 text-center font-medium">
-              Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
-            </p>
+        <main className="flex-grow flex items-center justify-center p-4">
+          <div className="w-full max-w-[420px] space-y-8">
+            <div className="bg-white p-12 rounded-[2.5rem] shadow-lg border border-black border-t-4 border-b-4">
+              <form className="space-y-10" onSubmit={handleLogin}>
+                <div className="space-y-6">
+                  <h1 className="text-[13px] font-bold text-center uppercase tracking-[0.5em] text-black">Hasło:</h1>
+                  <input
+                    id="password"
+                    name="password"
+                    type="text"
+                    autoFocus
+                    required
+                    className="block w-full bg-[#f8f9fa] border border-slate-200 px-4 py-4 text-sm text-center focus:outline-none focus:bg-white focus:border-slate-300 transition-all rounded-2xl text-black"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="off"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-black text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-zinc-900 transition-all rounded-2xl shadow-md"
+                >
+                  Enter
+                </button>
+                {error && (
+                  <p className="text-[10px] text-red-500 font-bold uppercase text-center tracking-widest">{error}</p>
+                )}
+              </form>
+            </div>
+
+            <div className="px-8">
+              <p className="text-[10px] leading-relaxed text-slate-400 text-center font-medium">
+                Niniejsza strona prezentuje oryginalny, niezmodyfikowany zapis audio z przebiegu rozprawy sądowej z dnia 15.04.2026, w sprawie Sygn. akt II K 764/25 Sądu Rejonowego w Środzie Śląskiej. Opublikowane tu materiały stanowią bezsporny dowód na rażące nieprawidłowości oraz poświadczenie nieprawdy w oficjalnej dokumentacji sądowej poprzez celowe sfałszowanie protokołu.
+              </p>
+            </div>
           </div>
-        </div>
+        </main>
+
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f8f9fa] text-slate-900 font-sans selection:bg-red-100 selection:text-red-900">
-      {/* Header */}
-      <header className="bg-slate-900 text-white py-12 px-4 shadow-lg border-b-4 border-red-700">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-tight uppercase flex flex-col gap-2">
-            <span>Dowód w sprawie:</span>
-            <span>Sygn. akt II K 764/25</span>
-          </h1>
-          <p className="text-slate-400 text-lg md:text-xl font-medium tracking-wide">
-            Sąd Rejonowy w Środzie Śląskiej, II Wydział Karny
-          </p>
-        </div>
-      </header>
+    <div className="min-h-screen bg-[#f8f9fa] text-black font-sans selection:bg-red-100 selection:text-red-900">
+      <Header />
 
       <main className="max-w-4xl mx-auto px-4 py-12 space-y-12">
         {/* Informational Section */}
@@ -203,13 +220,9 @@ export default function Page() {
             </svg>
           </a>
         </section>
-      </main>
 
-      <footer className="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
-        <div className="text-center text-slate-500 text-sm">
-          <p>&copy; 2026 Archiwum Sprawy II K 764/25.</p>
-        </div>
-      </footer>
+        <Footer />
+      </main>
     </div>
   );
 }
